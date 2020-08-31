@@ -4,16 +4,38 @@ This is a (wip) template to use [fennel](https://fennel-lang.org) for scripting.
 To package up the final lua code, I used a script provided by a forum member by the name of hdparm.
 I committed the script here until it is publicly available.
 
-# entry.lua
+Currently this template was only tested with the WSL (Windows Subsystem for Linux), but it should work just fine on linux/debian/ubuntu.
+With msys or cygwin it should also be possible to use it directly under windows.
+
+# Installation
+
+Install lua 5.3 and luarocks
+
+Install fennel and luasrcdiet
+```bash
+sudo luarocks install fennel
+sudo luarocks install luasrcdiet
+```
+
+Install lua-amalg:
+```bash
+wget https://github.com/siffiejoe/lua-amalg/archive/master.tar.gz -O lua-amalg.tar.gz
+tar xvf lua-amalg.tar.gz
+sudo cp lua-amalg-master/src/amalg.lua /usr/local/bin/
+```
+
+# Usage
+
+## entry.lua
 The entry.lua file is what imports and exposes your fennel code
 
-# SLOTS
+## SLOTS
 The SLOTS file contains the slot definitions. One per file.
 
-# src
+## src
 This is where your fennel code goes. Make sure there is a file named `main.fnl` for the scripts to work
 
-# build.sh
+## build.sh
 The build.sh file builds and packages your fennel code into a DU consumable JSON file.
 
 The is the following
