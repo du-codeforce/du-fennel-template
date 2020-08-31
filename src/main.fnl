@@ -34,5 +34,3 @@
 			(screen.setCenteredText (.. "mouse down: x=" x " , y=" y))
 		)
 }
-
-
