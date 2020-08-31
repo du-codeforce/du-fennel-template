@@ -8,7 +8,6 @@
 			(unit.setTimer "b" 3) ;; timer id "b", ticks every 3 seconds
 		)
 
-	"initialize" (onStart)
 	"onStop" (fn []
 			(screen.setCenteredText "script stopped")
 		)

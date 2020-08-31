@@ -1,6 +1,9 @@
 # Fennel Template
 This is a (wip) template to use [fennel](https://fennel-lang.org) for scripting.
 
+To package up the final lua code, I used a script provided by a forum member by the name of hdparm.
+I committed the script here until it is publicly available.
+
 # entry.lua
 The entry.lua file is what imports and exposes your fennel code
 

@@ -7,4 +7,4 @@ SLOTS=$(cat SLOTS)
 SLOTS=$(echo $SLOTS | tr '\r\n' ' ')
 SLOTS=$(echo $SLOTS | tr '\n' ' ')
 
-wrap.lua build/package_min.lua --slots $SLOTS --handle-errors > out/final.json
+tools/wrap.lua build/package_min.lua --slots $SLOTS --handle-errors > out/final.json

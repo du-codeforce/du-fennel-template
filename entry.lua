@@ -1,2 +1,2 @@
 script = require("build/build")
-script.initialize()
+script.onStart()
