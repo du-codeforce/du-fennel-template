@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir temp
+mkdir -p temp
 
 fennel --require-as-include --compile src/main.fnl > temp/build.lua
 amalg.lua -s entry.lua temp/build -o temp/package.lua
