@@ -1,2 +1,2 @@
-script = require("build/build")
+script = require("temp/build")
 script.onStart()
