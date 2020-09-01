@@ -1,36 +1,50 @@
-{
-	"onStart" (fn []
-			;; Display some text
-			(screen.setCenteredText "script started")
+(var script {})
 
-			;; Create some timers to show that the script is working
-			(unit.setTimer "a" 2) ;; timer id "a", ticks every 2 seconds
-			(unit.setTimer "b" 3) ;; timer id "b", ticks every 3 seconds
-		)
+(set script.onStart
+	(fn []
+		;; Display some text
+		(screen.setCenteredText "script started")
 
-	"onStop" (fn []
-			(screen.setCenteredText "script stopped")
-		)
+		;; Create some timers to show that the script is working
+		(unit.setTimer "a" 2) ;; timer id "a", ticks every 2 seconds
+		(unit.setTimer "b" 3) ;; timer id "b", ticks every 3 seconds
+	)
+)
 
-	"onActionStart" (fn [actionName]
-			(screen.setCenteredText (.. actionName " key pressed"))
-		)
+(set script.onStop
+	(fn []
+		(screen.setCenteredText "script stopped")
+	)
+)
 
-	"onActionStop" (fn [actionName]
-			(screen.setCenteredText (.. actionName " key released"))
-		)
+(set script.onActionStart
+	(fn [actionName]
+		(screen.setCenteredText (.. actionName " key pressed"))
+	)
+)
 
-	"onTick" (fn  [timerId]
-			(screen.setCenteredText (.. "timer " timerId " ticked"))
-		)
+(set script.onActionStop
+	(fn [actionName]
+		(screen.setCenteredText (.. actionName " key released"))
+	)
+)
 
-		;; Other events that are available by default:
-		;; * onActionLoop(actionName): action key is held
-		;; * onUpdate(): executed once per frame
-		;; * onFlush(): executed 60 times per second, for physics calculations only; setEngineCommand must be called from here
+(set script.onTick
+	(fn  [timerId]
+		(screen.setCenteredText (.. "timer " timerId " ticked"))
+	)
+)
 
-		;; Slot events are available if slot type is set with the ;;slot command line option.
-	"onMouseDown" (fn [x y]
-			(screen.setCenteredText (.. "mouse down: x=" x " , y=" y))
-		)
-}
+;; Other events that are available by default:
+;; * onActionLoop(actionName): action key is held
+;; * onUpdate(): executed once per frame
+;; * onFlush(): executed 60 times per second, for physics calculations only; setEngineCommand must be called from here
+
+;; Slot events are available if slot type is set with the ;;slot command line option.
+(set script.onMouseDown
+	(fn [x y]
+		(screen.setCenteredText (.. "mouse down: x=" x " , y=" y))
+	)
+)
+
+script
