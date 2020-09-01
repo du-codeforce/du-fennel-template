@@ -56,3 +56,8 @@ The is the following
 3) Call build.sh
 4) Copy the content of `out/final.json`
 5) In Dual Universe, right-click on the part you want the script running on and choose "Advanced -> Paste Lua Script"
+
+# Example
+There is example code in [src/main.fnl](src/main.fnl).
+
+The example was created from the original example code which can be seen in [tools/README.md](tools/README.md).
